@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "whisper-transcriber"
+version = "0.1.0"
+description = "A tool to transcribe audio files using OpenAI's Whisper API."
+authors = ["Franck Ferman <contact@franckferman.fr>"]
+license = "GNU AGPLv3"
+readme = "README.md"
+keywords = ["transcription", "audio", "OpenAI", "Whisper", "osint", "cyber-security"]
+homepage = "https://github.com/franckferman/whisper-transcriber"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+openai = "0.28.0"
+pydub = "^0.25.1"
+typer = "^0.13.0"
+tqdm = "^4.67.0"
+colored = "^2.2.4"
+
+[tool.poetry.dev-dependencies]
+black = "^22.1.0"
+flake8 = "^4.0.1"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+whisper-transcriber = "src.main:app"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+exclude = ["build", "dist"]
+
+[tool.mypy]
+plugins = []
